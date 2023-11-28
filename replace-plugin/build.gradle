@@ -1,0 +1,22 @@
+apply plugin: 'org.jetbrains.kotlin.jvm'
+apply plugin: 'java-gradle-plugin'
+
+gradlePlugin {
+    plugins {
+        modularPlugin {
+            id = 'com.example.replace'
+            implementationClass = 'com.example.ReplacePlugin'
+        }
+    }
+}
+
+dependencies {
+    // gradle的编译依赖，内部依赖了asm 7.0版本
+    implementation 'com.android.tools.build:gradle:4.1.3'
+    compileOnly gradleApi()
+    compileOnly localGroovy()
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+//    implementation 'org.ow2.asm:asm:9.2'
+//    implementation 'org.ow2.asm:asm-commons:9.2'
+
+}
